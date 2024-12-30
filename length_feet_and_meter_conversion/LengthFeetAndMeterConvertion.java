@@ -1,49 +1,48 @@
 import java.util.Scanner;
 
-public class TemperatureConversion {
-
+public class LengthFeetAndMeterConvertion {
     public static void main(String[] args) {
-        // sample data for linear regression
-        double[][] data = {
-            {0, 32},
-            {10, 50},
-            {20, 68},
-            {30, 86},
-            {40, 104},
-            {50, 122},
-            {60, 140},
-            {70, 158},
-            {80, 176},
-            {90, 194},
-            {100, 212}
-            
-            
-        };
 
+        // sample dta for linear regression
+        double[][] data = {
+            {0, 0},
+            {1, 0.3048},
+            {2, 0.6096},
+            {3, 0.9144},
+            {4, 1.2192},
+            {5, 1.524},
+            {6, 1.8288},
+            {7, 2.1336},
+            {8, 2.4384},
+            {9, 2.7432},
+            {10, 3.048},
+
+
+        };
 
         // Perform linear regression to find slope (m) and intercept (b)
         double[] coefficients = performLinearRegression(data);
         double m = coefficients[0];
         double b = coefficients[1]; 
 
-        System.out.println("Linear Regrression Model: F = " + m + "x C + " + b);
+        System.out.println("Linear Regrression Model: Meter = " + m + "x Feet + " + b); 
 
-        // Interactive temperature conversion 
+         // Interactive temperature conversion 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter temperature in Celsius to convert to Fahrenheit: ");
+        System.out.println("Enter temperature in feet(foot) to convert to Meter(s): ");
 
-        double celsius = scanner.nextDouble();
-        double fahrenheit = m * celsius + b;
-        System.out.println("Converted to Fahrenheit: " + fahrenheit);
+        double feet = scanner.nextDouble();
+        double meter = m * feet + b;
+        System.out.println("Converted to Fahrenheit: " + meter);
 
 
-        System.out.println("Enter temperature in Fahrenheit to convert to Celsius: ");
-        fahrenheit = scanner.nextDouble();
-        celsius = (fahrenheit - b) / m;
-        System.out.println("Converted to Celsius: " + celsius);
+
+        System.out.println("Enter temperature in meter to convert to feet: ");
+        meter = scanner.nextDouble();
+        feet = (meter - b) / m;
+        System.out.println("Converted to feet: " + feet);
 
         scanner.close();
-
 
     }
 
@@ -85,5 +84,6 @@ public class TemperatureConversion {
             
          */
 
-    }
+    } 
+        
 }
